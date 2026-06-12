@@ -70,14 +70,14 @@ async function main() {
 
   // Nav Services (printing methods)
   const services = [
-    { nameRu: "Брендированная одежда",  nameUz: "Brendlangan kiyim",       slug: "brendirovannaya-odezhda",  order: 0, imageUrl: "/uploads/svc-vyshivka.jpg" },
-    { nameRu: "Рекламные сувениры",     nameUz: "Reklama suvenirlari",     slug: "reklamnye-suveniry",       order: 1, imageUrl: "/uploads/svc-shelko.jpg" },
-    { nameRu: "Корпоративные подарки",  nameUz: "Korporativ sovg'alar",    slug: "korporativnye-podarki",    order: 2, imageUrl: "/uploads/svc-sublim.jpg" },
-    { nameRu: "Нанесение логотипов",    nameUz: "Logotip bosish",          slug: "nanesenie-logotipov",      order: 3, imageUrl: "/uploads/svc-uf.jpg" },
-    { nameRu: "Рекламная полиграфия",   nameUz: "Reklama poligrafiyasi",   slug: "reklamnaya-poligrafiya",   order: 4, imageUrl: "/uploads/svc-ufdtf.jpg" },
-    { nameRu: "Промо аксессуары",       nameUz: "Promo aksessuarlar",      slug: "promo-aksessuary-svc",     order: 5, imageUrl: "/uploads/svc-tisnenie.jpg" },
-    { nameRu: "Подарочные наборы",      nameUz: "Sovg'a to'plamlari",      slug: "podarochnye-nabory-svc",   order: 6, imageUrl: "/uploads/svc-lazer.jpg" },
-    { nameRu: "Электроника и гаджеты",  nameUz: "Elektronika va gadjetlar",slug: "elektronika-gadzhety",     order: 7, imageUrl: "/uploads/svc-tampo.jpg" },
+    { nameRu: "Брендированная одежда",  nameUz: "Brendlangan kiyim",       slug: "brendirovannaya-odezhda",  order: 0, imageUrl: "/uploads/svc-branded-clothing.jpg" },
+    { nameRu: "Рекламные сувениры",     nameUz: "Reklama suvenirlari",     slug: "reklamnye-suveniry",       order: 1, imageUrl: "/uploads/svc-suveniry.jpg" },
+    { nameRu: "Корпоративные подарки",  nameUz: "Korporativ sovg'alar",    slug: "korporativnye-podarki",    order: 2, imageUrl: "/uploads/svc-podarki.jpg" },
+    { nameRu: "Нанесение логотипов",    nameUz: "Logotip bosish",          slug: "nanesenie-logotipov",      order: 3, imageUrl: "/uploads/svc-logotipy.jpg" },
+    { nameRu: "Рекламная полиграфия",   nameUz: "Reklama poligrafiyasi",   slug: "reklamnaya-poligrafiya",   order: 4, imageUrl: "/uploads/svc-poligrafiya.jpg" },
+    { nameRu: "Промо аксессуары",       nameUz: "Promo aksessuarlar",      slug: "promo-aksessuary-svc",     order: 5, imageUrl: "/uploads/svc-aksessuary.jpg" },
+    { nameRu: "Подарочные наборы",      nameUz: "Sovg'a to'plamlari",      slug: "podarochnye-nabory-svc",   order: 6, imageUrl: "/uploads/svc-nabory.jpg" },
+    { nameRu: "Электроника и гаджеты",  nameUz: "Elektronika va gadjetlar",slug: "elektronika-gadzhety",     order: 7, imageUrl: "/uploads/svc-elektronika.jpg" },
   ];
 
   for (const s of services) {
