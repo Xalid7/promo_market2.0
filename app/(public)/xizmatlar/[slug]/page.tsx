@@ -51,7 +51,7 @@ export default function XizmatlarPage() {
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)' }} />
         <div style={{ position: 'relative', padding: '28px 32px', color: '#fff' }}>
           <p style={{ fontSize: 12, letterSpacing: 2, textTransform: 'uppercase', opacity: 0.7, marginBottom: 8 }}>
-            {lang === 'ru' ? 'Нанесение логотипа' : 'Logo bosish'}
+            {lang === 'ru' ? 'Promo Market — Услуги' : 'Promo Market — Xizmatlar'}
           </p>
           <h1 style={{ fontSize: 'clamp(22px, 4vw, 36px)', fontWeight: 900, letterSpacing: -0.5 }}>
             {lang === 'ru' ? service.nameRu : service.nameUz}

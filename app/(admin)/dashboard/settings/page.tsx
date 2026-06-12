@@ -51,11 +51,11 @@ export default function SettingsPage() {
             📞 Kontakt ma'lumotlari
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-            <Field label="Telegram" hint="Misol: https://t.me/artprint_uz yoki @artprint_uz">
-              <input style={inputStyle} value={form.telegram} onChange={set('telegram')} placeholder="https://t.me/artprint_uz" onFocus={focusBorder} onBlur={blurBorder} />
+            <Field label="Telegram" hint="Misol: https://t.me/PromoMarket_Tashkent yoki @PromoMarket">
+              <input style={inputStyle} value={form.telegram} onChange={set('telegram')} placeholder="https://t.me/PromoMarket_Tashkent" onFocus={focusBorder} onBlur={blurBorder} />
             </Field>
             <Field label="Email">
-              <input style={inputStyle} type="email" value={form.email} onChange={set('email')} placeholder="info@artprint.uz" onFocus={focusBorder} onBlur={blurBorder} />
+              <input style={inputStyle} type="email" value={form.email} onChange={set('email')} placeholder="info@promomarket.uz" onFocus={focusBorder} onBlur={blurBorder} />
             </Field>
             <Field label="Telefon raqami">
               <input style={inputStyle} value={form.phone} onChange={set('phone')} placeholder="+998 77 741 66 88" onFocus={focusBorder} onBlur={blurBorder} />

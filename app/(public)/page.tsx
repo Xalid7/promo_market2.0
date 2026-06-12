@@ -362,20 +362,20 @@ export default function HomePage() {
               {lang === 'ru' ? 'Почему выбирают нас?' : 'Nima uchun bizni tanlashadi?'}
             </h2>
             <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 15 }}>
-              {lang === 'ru' ? 'Надёжный партнёр в сфере корпоративной одежды и промо-продукции' : "Korporativ kiyim va promo mahsulotlar sohasida ishonchli hamkor"}
+              {lang === 'ru' ? 'Надёжный партнёр в сфере промо сувениров и корпоративных подарков' : "Promo suvenirlar va korporativ sovg'alar sohasida ishonchli hamkor"}
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
             {(lang === 'ru' ? [
-              { num: '01', title: 'Широкий ассортимент', desc: 'Спецодежда, СИЗ, корпоративная одежда, промо-продукция — всё в одном месте' },
-              { num: '02', title: 'Нанесение логотипов', desc: 'Вышивка, шелкография, сублимация и другие методы брендинга' },
-              { num: '03', title: 'Быстрое исполнение', desc: 'Выполняем заказы в срок, работаем с юридическими лицами' },
-              { num: '04', title: 'Доставка по Узбекистану', desc: 'Оптовые и розничные поставки по всему Узбекистану' },
+              { num: '01', title: 'Огромный ассортимент', desc: 'Сувениры, корпоративные подарки, брендированная одежда и рекламная продукция — всё в одном месте' },
+              { num: '02', title: 'Брендинг под ключ', desc: 'Нанесение логотипа на любой продукт: печать, вышивка, гравировка и другие методы' },
+              { num: '03', title: 'Быстрое исполнение', desc: 'Выполняем заказы в срок, работаем с юридическими и физическими лицами' },
+              { num: '04', title: 'Доставка по Узбекистану', desc: 'Оптовые и розничные поставки промо продукции по всему Узбекистану' },
             ] : [
-              { num: '01', title: 'Keng assortiment', desc: "Maxsus kiyim, SHV, korporativ kiyim, promo mahsulot — hammasi bir joyda" },
-              { num: '02', title: 'Logo bosish', desc: "Kashta, shyolkografiya, sublimatsiya va boshqa brendlash usullari" },
-              { num: '03', title: 'Tez bajarish', desc: "Buyurtmalarni o'z vaqtida bajaramiz, yuridik shaxslar bilan ishlaymiz" },
-              { num: '04', title: "O'zbekiston bo'ylab yetkazish", desc: "O'zbekiston bo'ylab ulgurji va chakana yetkazib berish" },
+              { num: '01', title: 'Keng assortiment', desc: "Suvenirlar, korporativ sovg'alar, brendlangan kiyim va reklama mahsulotlari — hammasi bir joyda" },
+              { num: '02', title: "To'liq brendlash", desc: "Har qanday mahsulotga logotip qo'yish: bosma, kashta, gravyura va boshqa usullar" },
+              { num: '03', title: 'Tez bajarish', desc: "Buyurtmalarni o'z vaqtida bajaramiz, yuridik va jismoniy shaxslar bilan ishlaymiz" },
+              { num: '04', title: "O'zbekiston bo'ylab yetkazish", desc: "O'zbekiston bo'ylab promo mahsulotlarni ulgurji va chakana yetkazib berish" },
             ]).map((item, i) => (
               <div key={i} className="reveal" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 16, padding: '28px 24px', backdropFilter: 'blur(4px)', transition: 'background .25s', transitionDelay: `${i * 0.08}s`, cursor: 'default' }}
                 onMouseEnter={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.15)')}
