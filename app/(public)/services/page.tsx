@@ -25,8 +25,8 @@ export default function ServicesPage() {
       </h1>
       <p style={{ color: '#777', fontSize: 15, marginBottom: 40 }}>
         {lang === 'ru'
-          ? 'Полный спектр услуг по производству спецодежды и текстиля'
-          : "Maxsus kiyim va to'qimachilik ishlab chiqarish bo'yicha to'liq xizmatlar"}
+          ? 'Промо сувениры, корпоративные подарки и брендированная продукция под ваш заказ'
+          : "Promo suvenirlar, korporativ sovg'alar va brendlangan mahsulotlar — buyurtma asosida"}
       </p>
 
       {services.length === 0 ? (

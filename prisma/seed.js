@@ -70,14 +70,14 @@ async function main() {
 
   // Nav Services (printing methods)
   const services = [
-    { nameRu: "Вышивка",             nameUz: "Kashta tikish",    slug: "vyshivka",             order: 0, imageUrl: "/uploads/svc-vyshivka.jpg" },
-    { nameRu: "Шелкография",         nameUz: "Shyolkografiya",   slug: "shelkografiya",        order: 1, imageUrl: "/uploads/svc-shelko.jpg" },
-    { nameRu: "УФ-печать",           nameUz: "UF-bosma",         slug: "uf-pechat",            order: 2, imageUrl: "/uploads/svc-uf.jpg" },
-    { nameRu: "Сублимация",          nameUz: "Sublimatsiya",     slug: "sublimatsiya",         order: 3, imageUrl: "/uploads/svc-sublim.jpg" },
-    { nameRu: "DTF печать",          nameUz: "DTF bosma",        slug: "dtf-pechat",           order: 4, imageUrl: "/uploads/svc-ufdtf.jpg" },
-    { nameRu: "Тиснение",            nameUz: "Tisnenie",         slug: "tisnenie",             order: 5, imageUrl: "/uploads/svc-tisnenie.jpg" },
-    { nameRu: "Лазерная гравировка", nameUz: "Lazer gravirovka", slug: "lazernaya-gravirovka", order: 6, imageUrl: "/uploads/svc-lazer.jpg" },
-    { nameRu: "Тампопечать",         nameUz: "Tampobosma",       slug: "tampopechat",          order: 7, imageUrl: "/uploads/svc-tampo.jpg" },
+    { nameRu: "Брендированная одежда",  nameUz: "Brendlangan kiyim",       slug: "brendirovannaya-odezhda",  order: 0, imageUrl: "/uploads/svc-vyshivka.jpg" },
+    { nameRu: "Рекламные сувениры",     nameUz: "Reklama suvenirlari",     slug: "reklamnye-suveniry",       order: 1, imageUrl: "/uploads/svc-shelko.jpg" },
+    { nameRu: "Корпоративные подарки",  nameUz: "Korporativ sovg'alar",    slug: "korporativnye-podarki",    order: 2, imageUrl: "/uploads/svc-sublim.jpg" },
+    { nameRu: "Нанесение логотипов",    nameUz: "Logotip bosish",          slug: "nanesenie-logotipov",      order: 3, imageUrl: "/uploads/svc-uf.jpg" },
+    { nameRu: "Рекламная полиграфия",   nameUz: "Reklama poligrafiyasi",   slug: "reklamnaya-poligrafiya",   order: 4, imageUrl: "/uploads/svc-ufdtf.jpg" },
+    { nameRu: "Промо аксессуары",       nameUz: "Promo aksessuarlar",      slug: "promo-aksessuary-svc",     order: 5, imageUrl: "/uploads/svc-tisnenie.jpg" },
+    { nameRu: "Подарочные наборы",      nameUz: "Sovg'a to'plamlari",      slug: "podarochnye-nabory-svc",   order: 6, imageUrl: "/uploads/svc-lazer.jpg" },
+    { nameRu: "Электроника и гаджеты",  nameUz: "Elektronika va gadjetlar",slug: "elektronika-gadzhety",     order: 7, imageUrl: "/uploads/svc-tampo.jpg" },
   ];
 
   for (const s of services) {
