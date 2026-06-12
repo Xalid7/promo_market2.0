@@ -156,10 +156,10 @@ export default function HomePage() {
                   </span>
                 </div>
                 <h1 className="hero-text-2" style={{ color: '#fff', fontSize: 'clamp(32px, 5.5vw, 60px)', fontWeight: 900, letterSpacing: -1.5, lineHeight: 1.05, marginBottom: 20 }}>
-                  {lang === 'ru' ? <><span style={{ display: 'block' }}>Корпоративная</span><span style={{ display: 'block', color: 'rgba(255,255,255,0.7)' }}>одежда и промо</span></> : <><span style={{ display: 'block' }}>Korporativ kiyim</span><span style={{ display: 'block', color: 'rgba(255,255,255,0.7)' }}>va promo mahsulot</span></>}
+                  {lang === 'ru' ? <><span style={{ display: 'block' }}>Промо сувениры</span><span style={{ display: 'block', color: 'rgba(255,255,255,0.7)' }}>и подарки</span></> : <><span style={{ display: 'block' }}>Promo suvenirlar</span><span style={{ display: 'block', color: 'rgba(255,255,255,0.7)' }}>va sovg'alar</span></>}
                 </h1>
                 <p className="hero-text-3" style={{ color: 'rgba(255,255,255,0.72)', fontSize: 'clamp(14px, 1.8vw, 17px)', marginBottom: 36, maxWidth: 420, lineHeight: 1.6 }}>
-                  {lang === 'ru' ? 'Спецодежда, СИЗ, брендированная одежда и рекламная продукция под заказ по всему Узбекистану' : "O'zbekiston bo'ylab buyurtma asosida maxsus kiyim, SHV, brendlangan kiyim va reklama mahsulotlari"}
+                  {lang === 'ru' ? 'Рекламная продукция, корпоративные подарки, брендированные сувениры под заказ по всему Узбекистану' : "Reklama mahsulotlari, korporativ sovg'alar, brendlangan suvenirlar — buyurtma asosida O'zbekiston bo'ylab"}
                 </p>
                 <div className="hero-btns" style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                   <Link href="/catalog" className="btn-cta" style={{ background: '#fff', color: '#F57C00', padding: '14px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none', boxShadow: '0 6px 20px rgba(0,0,0,0.25)', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
