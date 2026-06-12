@@ -34,7 +34,7 @@ export default function ServicesPage() {
           {lang === 'ru' ? 'Услуги не найдены' : 'Xizmatlar topilmadi'}
         </p>
       ) : (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 16 }}>
+        <div className="svc-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
           {services.map((s: any) => (
             <Link key={s.id} href={`/xizmatlar/${s.slug}`} style={{ textDecoration: 'none' }}>
               <div
@@ -84,6 +84,10 @@ export default function ServicesPage() {
           ))}
         </div>
       )}
+      <style>{`
+        @media (max-width: 900px) { .svc-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+        @media (max-width: 480px) { .svc-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+      `}</style>
     </div>
   )
 }
