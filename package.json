@@ -1,0 +1,42 @@
+{
+  "name": "promo-market",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "export DATABASE_URL=${DATABASE_URL:-file:./prisma/prod.db} && export NEXTAUTH_SECRET=${NEXTAUTH_SECRET:-promomarket_secret_key_2024} && prisma generate && next build",
+    "start": "export DATABASE_URL=${DATABASE_URL:-file:./prisma/prod.db} && export NEXTAUTH_SECRET=${NEXTAUTH_SECRET:-promomarket_secret_key_2024} && prisma db push && node prisma/seed.js && next start",
+    "lint": "eslint",
+    "seed": "npx ts-node --compiler-options '{\"module\":\"CommonJS\"}' prisma/seed.ts"
+  },
+  "prisma": {
+    "seed": "npx ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "@prisma/client": "^5.22.0",
+    "@types/bcryptjs": "^2.4.6",
+    "bcryptjs": "^3.0.3",
+    "lucide-react": "^1.17.0",
+    "next": "16.2.9",
+    "next-auth": "^4.24.14",
+    "prisma": "^5.22.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-hot-toast": "^2.6.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.9",
+    "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5"
+  }
+}
