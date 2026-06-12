@@ -70,14 +70,14 @@ async function main() {
 
   // Nav Services (printing methods)
   const services = [
-    { nameRu: "Вышивка",           nameUz: "Kashta tikish",   slug: "vyshivka",          order: 0 },
-    { nameRu: "Шелкография",       nameUz: "Shyolkografiya",  slug: "shelkografiya",     order: 1 },
-    { nameRu: "УФ-печать",         nameUz: "UF-bosma",        slug: "uf-pechat",         order: 2 },
-    { nameRu: "Сублимация",        nameUz: "Sublimatsiya",    slug: "sublimatsiya",      order: 3 },
-    { nameRu: "DTF печать",        nameUz: "DTF bosma",       slug: "dtf-pechat",        order: 4 },
-    { nameRu: "Тиснение",          nameUz: "Tisnenie",        slug: "tisnenie",          order: 5 },
-    { nameRu: "Лазерная гравировка", nameUz: "Lazer gravirovka", slug: "lazernaya-gravirovka", order: 6 },
-    { nameRu: "Тампопечать",       nameUz: "Tampobosma",      slug: "tampopechat",       order: 7 },
+    { nameRu: "Вышивка",             nameUz: "Kashta tikish",    slug: "vyshivka",             order: 0, imageUrl: "/uploads/svc-vyshivka.jpg" },
+    { nameRu: "Шелкография",         nameUz: "Shyolkografiya",   slug: "shelkografiya",        order: 1, imageUrl: "/uploads/svc-shelko.jpg" },
+    { nameRu: "УФ-печать",           nameUz: "UF-bosma",         slug: "uf-pechat",            order: 2, imageUrl: "/uploads/svc-uf.jpg" },
+    { nameRu: "Сублимация",          nameUz: "Sublimatsiya",     slug: "sublimatsiya",         order: 3, imageUrl: "/uploads/svc-sublim.jpg" },
+    { nameRu: "DTF печать",          nameUz: "DTF bosma",        slug: "dtf-pechat",           order: 4, imageUrl: "/uploads/svc-ufdtf.jpg" },
+    { nameRu: "Тиснение",            nameUz: "Tisnenie",         slug: "tisnenie",             order: 5, imageUrl: "/uploads/svc-tisnenie.jpg" },
+    { nameRu: "Лазерная гравировка", nameUz: "Lazer gravirovka", slug: "lazernaya-gravirovka", order: 6, imageUrl: "/uploads/svc-lazer.jpg" },
+    { nameRu: "Тампопечать",         nameUz: "Tampobosma",       slug: "tampopechat",          order: 7, imageUrl: "/uploads/svc-tampo.jpg" },
   ];
 
   for (const s of services) {
