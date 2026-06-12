@@ -25,7 +25,7 @@ export default function LoginPage() {
         {/* Logo */}
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{ width: 64, height: 64, background: '#F57C00', borderRadius: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', boxShadow: '0 8px 24px rgba(245,124,0,0.4)' }}>
-            <span style={{ color: '#fff', fontWeight: 900, fontSize: 13, textAlign: 'center', lineHeight: 1.3 }}>Art<br/>Print</span>
+            <span style={{ color: '#fff', fontWeight: 900, fontSize: 13, textAlign: 'center', lineHeight: 1.3 }}>PM</span>
           </div>
           <h1 style={{ color: '#fff', fontSize: 24, fontWeight: 800, letterSpacing: -0.5, marginBottom: 6 }}>Admin Panel</h1>
           <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: 14 }}>Kirish uchun ma'lumotlarni kiriting</p>
@@ -40,7 +40,7 @@ export default function LoginPage() {
                 type="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                placeholder="admin@artprint.uz"
+                placeholder="admin@promomarket.uz"
                 required
                 style={{ width: '100%', border: '1.5px solid #E0E0E0', borderRadius: 10, padding: '12px 14px', fontSize: 14, outline: 'none', transition: 'border-color .2s', boxSizing: 'border-box' }}
                 onFocus={e => (e.target.style.borderColor = '#F57C00')}
