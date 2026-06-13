@@ -3,8 +3,26 @@ import "./globals.css";
 import { Toaster } from 'react-hot-toast';
 
 export const metadata: Metadata = {
-  title: "PROMO MARKET — Maxsus kiyim ishlab chiqarish",
-  description: "O'zbekistonda maxsus kiyim, uniform va brendlangan mahsulotlar ishlab chiqaruvchi kompaniya",
+  title: {
+    default: "PROMO MARKET — Промо сувениры и корпоративные подарки в Ташкенте",
+    template: "%s | PROMO MARKET",
+  },
+  description: "Рекламные сувениры, корпоративные подарки, нанесение логотипов, промо текстиль на заказ в Ташкенте. Быстро, качественно, любой тираж.",
+  keywords: ["промо сувениры Ташкент", "корпоративные подарки Узбекистан", "рекламные сувениры", "нанесение логотипа", "promo suvenirlar Toshkent", "рекламная продукция"],
+  authors: [{ name: "PROMO MARKET" }],
+  creator: "PROMO MARKET",
+  metadataBase: new URL("https://promomarket.uz"),
+  openGraph: {
+    type: "website",
+    locale: "ru_RU",
+    siteName: "PROMO MARKET",
+    title: "PROMO MARKET — Промо сувениры и корпоративные подарки в Ташкенте",
+    description: "Рекламные сувениры, корпоративные подарки, нанесение логотипов на заказ в Ташкенте.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

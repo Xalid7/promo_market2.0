@@ -1,9 +1,35 @@
+import type { Metadata } from 'next'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+
+export const metadata: Metadata = {
+  alternates: { canonical: "https://promomarket.uz" },
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PROMO MARKET",
+  "description": "Рекламные сувениры, корпоративные подарки, нанесение логотипов в Ташкенте",
+  "url": "https://promomarket.uz",
+  "telephone": "+998777416688",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ташкент",
+    "addressCountry": "UZ"
+  },
+  "openingHours": "Mo-Sa 09:00-18:00",
+  "priceRange": "$$",
+  "sameAs": ["https://t.me/PromoMarket_Tashkent"]
+}
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />

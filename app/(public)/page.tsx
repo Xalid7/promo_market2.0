@@ -164,11 +164,11 @@ export default function HomePage() {
                   {lang === 'ru' ? 'Рекламная продукция, корпоративные подарки, брендированные сувениры под заказ по всему Узбекистану' : "Reklama mahsulotlari, korporativ sovg'alar, brendlangan suvenirlar — buyurtma asosida O'zbekiston bo'ylab"}
                 </p>
                 <div className="hero-btns" style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                  <Link href="/catalog" className="btn-cta" style={{ background: '#fff', color: '#F57C00', padding: '14px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none', boxShadow: '0 6px 20px rgba(0,0,0,0.25)', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                  <Link href="/catalog" className="btn-cta" style={{ background: '#fff', color: '#F57C00', padding: '14px 28px', borderRadius: 99, fontWeight: 700, fontSize: 15, textDecoration: 'none', boxShadow: '0 6px 20px rgba(0,0,0,0.25)', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 6h18M3 12h18M3 18h12"/></svg>
                     {lang === 'ru' ? 'Каталог' : 'Katalog'}
                   </Link>
-                  <Link href="/services" style={{ background: 'rgba(255,255,255,0.12)', border: '1.5px solid rgba(255,255,255,0.3)', color: '#fff', padding: '14px 28px', borderRadius: 10, fontWeight: 600, fontSize: 15, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8, transition: 'background .2s' }}
+                  <Link href="/services" style={{ background: 'rgba(255,255,255,0.12)', border: '1.5px solid rgba(255,255,255,0.3)', color: '#fff', padding: '14px 28px', borderRadius: 99, fontWeight: 600, fontSize: 15, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8, transition: 'background .2s' }}
                     onMouseEnter={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.2)')}
                     onMouseLeave={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.12)')}
                   >
@@ -291,7 +291,7 @@ export default function HomePage() {
             ))}
           </div>
           <div className="reveal" style={{ textAlign: 'center', marginTop: 32 }}>
-            <Link href="/services" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: '#F57C00', fontWeight: 700, fontSize: 14, textDecoration: 'none', border: '1.5px solid #F57C00', padding: '10px 24px', borderRadius: 8, transition: 'all .2s' }}
+            <Link href="/services" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: '#F57C00', fontWeight: 700, fontSize: 14, textDecoration: 'none', border: '1.5px solid #F57C00', padding: '10px 24px', borderRadius: 99, transition: 'all .2s' }}
               onMouseEnter={e => { e.currentTarget.style.background = '#F57C00'; e.currentTarget.style.color = '#fff' }}
               onMouseLeave={e => { e.currentTarget.style.background = ''; e.currentTarget.style.color = '#F57C00' }}
             >
@@ -432,10 +432,10 @@ export default function HomePage() {
             {lang === 'ru' ? 'Свяжитесь с нами — рассчитаем стоимость и сроки бесплатно' : "Biz bilan bog'laning — narx va muddatni bepul hisoblaymiz"}
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contacts" className="btn-cta" style={{ background: '#F57C00', color: '#fff', padding: '14px 32px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none', display: 'inline-block' }}>
+            <Link href="/contacts" className="btn-cta" style={{ background: '#F57C00', color: '#fff', padding: '14px 32px', borderRadius: 99, fontWeight: 700, fontSize: 15, textDecoration: 'none', display: 'inline-block' }}>
               {lang === 'ru' ? 'Связаться с нами' : "Biz bilan bog'lanish"}
             </Link>
-            <Link href="/catalog" style={{ background: 'rgba(255,255,255,0.08)', border: '1.5px solid rgba(255,255,255,0.2)', color: '#fff', padding: '14px 32px', borderRadius: 10, fontWeight: 600, fontSize: 15, textDecoration: 'none', display: 'inline-block', transition: 'background .2s' }}
+            <Link href="/catalog" style={{ background: 'rgba(255,255,255,0.08)', border: '1.5px solid rgba(255,255,255,0.2)', color: '#fff', padding: '14px 32px', borderRadius: 99, fontWeight: 600, fontSize: 15, textDecoration: 'none', display: 'inline-block', transition: 'background .2s' }}
               onMouseEnter={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.14)')}
               onMouseLeave={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.08)')}
             >
