@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   authors: [{ name: "PROMO MARKET" }],
   creator: "PROMO MARKET",
   metadataBase: new URL("https://promomarket.uz"),
+  verification: { google: "85CLV09Wh7f2-cszA8tzNMND6Vj7OKhjWRNL_STRFMw" },
   openGraph: {
     type: "website",
     locale: "ru_RU",
