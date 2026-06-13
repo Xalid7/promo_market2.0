@@ -8,7 +8,11 @@ export const metadata: Metadata = {
     template: "%s | PROMO MARKET",
   },
   description: "Рекламные сувениры, корпоративные подарки, нанесение логотипов, промо текстиль на заказ в Ташкенте. Быстро, качественно, любой тираж.",
-  keywords: ["промо сувениры Ташкент", "корпоративные подарки Узбекистан", "рекламные сувениры", "нанесение логотипа", "promo suvenirlar Toshkent", "рекламная продукция"],
+  keywords: [
+    "промо сувениры Ташкент", "промо сувениры Узбекистан", "корпоративные подарки", "рекламная продукция", "нанесение логотипа", "брендирование", "рекламные сувениры", "бизнес подарки", "сувениры с логотипом", "ручки с логотипом", "ежедневники", "кружки с логотипом",
+    "promo suvenirlar Toshkent", "promo suvenirlar Uzbekiston", "korporativ sovgalar", "reklama mahsulotlari", "logotip bosish", "brendlangan mahsulotlar", "esdalik sovgalar", "biznes sovgalar", "ruchkalar", "daftarlar", "krujkalar",
+    "Toshkent buyurtma", "Uzbekiston arzon", "sifatli", "narx"
+  ],
   authors: [{ name: "PROMO MARKET" }],
   creator: "PROMO MARKET",
   metadataBase: new URL("https://promomarket.uz"),
