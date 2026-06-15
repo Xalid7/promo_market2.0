@@ -22,7 +22,7 @@ export default function ContactsPage() {
       weekend: 'Сб, Вс — выходные',
       mapLink: 'Открыть в Яндекс Картах',
       directions: 'КАК ДОБРАТЬСЯ',
-      directionsText: 'Метро «Яккасарай» или «Хамид Олимжон». Первый вагон из центра. Выйдя из метро, пройдите по ул. Нукус в сторону Яккасарайского района до дома 12. Офис PROMO MARKET — в здании на первом этаже.',
+      directionsText: 'Метро «Яккасарай» или «Хамид Олимжон». Выйдя из метро, пройдите в сторону Яккасарайского района. Юнус Ражабий 14/2 — офис PROMO MARKET на первом этаже.',
       mapEmpty: 'Карта не настроена',
     },
     uz: {
@@ -32,7 +32,7 @@ export default function ContactsPage() {
       weekend: 'Shan, Yak — dam olish kunlari',
       mapLink: 'Yandex Xaritada ochish',
       directions: 'YO\'L TOPISH',
-      directionsText: 'Metro «Yakkasaroy» yoki «Hamid Olimjon». Markazdan birinchi vagon. Metrodan chiqqach, Nukus ko\'chasi bo\'ylab Yakkasaroy tumaniga tomon 12-uyga yuring. PROMO MARKET ofisi — birinchi qavatda.',
+      directionsText: 'Metro «Yakkasaroy» yoki «Hamid Olimjon». Metrodan chiqqach, Yakkasaroy tumani tomon yuring. Yunus Rajabiy 14/2 — PROMO MARKET ofisi birinchi qavatda.',
       mapEmpty: 'Xarita sozlanmagan',
     },
   }
