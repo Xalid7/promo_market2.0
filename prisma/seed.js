@@ -15,25 +15,21 @@ async function main() {
   console.log('✓ Admin');
 
   // Settings
+  const settingsData = {
+    telegram: "https://t.me/PromoMarket_Tashkent",
+    email: "info@promomarket.uz",
+    phone: "+998 77 741 66 88",
+    address: "Юнус Ражабий 14/2, Яккасарайский район, г. Ташкент, Узбекистан",
+    mapLat: "41.2880",
+    mapLng: "69.2350",
+    aboutRu: "PROMO MARKET — производство и поставка корпоративной одежды, рекламной продукции и брендированных сувениров в Узбекистане.",
+    aboutUz: "PROMO MARKET — O'zbekistonda korporativ kiyim, reklama mahsulotlari va brendlangan sovg'alar ishlab chiqarish va yetkazib berish.",
+  };
   const existingSettings = await prisma.settings.findFirst();
   if (existingSettings) {
-    await prisma.settings.update({
-      where: { id: existingSettings.id },
-      data: { telegram: "https://t.me/PromoMarket_Tashkent", email: "info@promomarket.uz" }
-    });
+    await prisma.settings.update({ where: { id: existingSettings.id }, data: settingsData });
   } else {
-    await prisma.settings.create({
-      data: {
-        telegram: "https://t.me/PromoMarket_Tashkent",
-        email: "info@promomarket.uz",
-        phone: "+998 77 741 66 88",
-        address: "Республика Узбекистан, г. Ташкент",
-        mapLat: "41.2995",
-        mapLng: "69.2401",
-        aboutRu: "PROMO MARKET — производство и поставка корпоративной одежды, рекламной продукции и брендированных сувениров в Узбекистане.",
-        aboutUz: "PROMO MARKET — O'zbekistonda korporativ kiyim, reklama mahsulotlari va brendlangan sovg'alar ishlab chiqarish va yetkazib berish.",
-      }
-    });
+    await prisma.settings.create({ data: settingsData });
   }
 
   // Clear old data and re-seed
