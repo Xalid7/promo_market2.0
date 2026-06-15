@@ -14,7 +14,11 @@ export async function GET(req: NextRequest) {
   const search = searchParams.get('search')
 
   const where: any = {}
-  if (categoryId) where.categoryId = categoryId
+  if (categoryId) {
+    const subCats = await prisma.category.findMany({ where: { parentId: categoryId }, select: { id: true } })
+    const ids = [categoryId, ...subCats.map((c: { id: string }) => c.id)]
+    where.categoryId = { in: ids }
+  }
   if (filter === 'new') where.isNew = true
   if (filter === 'collection') where.isCollection = true
   if (filter === 'holiday') where.isHoliday = true

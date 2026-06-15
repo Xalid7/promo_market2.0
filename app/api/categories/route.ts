@@ -8,8 +8,22 @@ function slugify(s: string) {
 }
 
 export async function GET() {
-  const cats = await prisma.category.findMany({ orderBy: { order: 'asc' }, include: { _count: { select: { products: true } } } })
-  return NextResponse.json(cats)
+  const cats = await prisma.category.findMany({
+    where: { parentId: null },
+    orderBy: { order: 'asc' },
+    include: {
+      _count: { select: { products: true } },
+      children: {
+        orderBy: { order: 'asc' },
+        include: { _count: { select: { products: true } } },
+      },
+    },
+  })
+  const result = cats.map((cat: any) => {
+    const childTotal = cat.children.reduce((sum: number, c: any) => sum + (c._count?.products || 0), 0)
+    return { ...cat, _count: { products: (cat._count?.products || 0) + childTotal } }
+  })
+  return NextResponse.json(result)
 }
 
 export async function POST(req: NextRequest) {

@@ -2,6 +2,17 @@
 import { useState, useEffect, Suspense } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
+import { ShieldCheck, Footprints, Hand, Stethoscope, GraduationCap, Shirt, BedDouble, TowelRack, Gift, Briefcase, Tag, Layers, Scissors, ShoppingBag, Package } from 'lucide-react'
+
+const ICON_MAP: Record<string, React.ComponentType<{ size?: number; color?: string }>> = {
+  ShieldCheck, Footprints, Hand, Stethoscope, GraduationCap, Shirt, BedDouble, TowelRack, Gift, Briefcase, Tag, Layers, Scissors, ShoppingBag,
+}
+
+function CatIcon({ name, size = 20, color }: { name?: string; size?: number; color?: string }) {
+  const Comp = name ? ICON_MAP[name] : null
+  if (!Comp) return <Package size={size} color={color} />
+  return <Comp size={size} color={color} />
+}
 
 function useReveal() {
   useEffect(() => {
@@ -26,6 +37,11 @@ function CatalogContent() {
   const [activeFilter, setActiveFilter] = useState('all')
   const [activeCat, setActiveCat] = useState<string | null>(null)
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [expandedCat, setExpandedCat] = useState<string | null>(null)
+
+  function toggleExpand(id: string) {
+    setExpandedCat(prev => prev === id ? null : id)
+  }
 
   useReveal()
 
@@ -51,7 +67,6 @@ function CatalogContent() {
   }, [searchParams, activeFilter, activeCat])
 
   const filters = [
-    { key: 'all', ru: 'ВЕСЬ КАТАЛОГ', uz: 'BARCHA' },
     { key: 'new', ru: 'НОВИНКИ', uz: 'YANGILAR' },
     { key: 'collection', ru: 'ПОДБОРКИ', uz: 'TANLOVLAR' },
     { key: 'holiday', ru: 'К ПРАЗДНИКАМ', uz: 'BAYRAMGA' },
@@ -61,11 +76,11 @@ function CatalogContent() {
     <div style={{ maxWidth: 1280, margin: '0 auto', padding: '24px 16px' }}>
 
       {/* Filter tabs */}
-      <div style={{ background: '#F57C00', borderRadius: 12, marginBottom: 24, overflowX: 'auto', scrollbarWidth: 'none' }}>
-        <div style={{ display: 'flex', alignItems: 'center', padding: 6, gap: 4, minWidth: 'max-content' }}>
+      <div style={{ background: '#F57C00', borderRadius: 99, marginBottom: 24, overflowX: 'auto', scrollbarWidth: 'none', display: 'inline-flex', maxWidth: '100%' }}>
+        <div style={{ display: 'flex', alignItems: 'center', padding: 5, gap: 4, minWidth: 'max-content' }}>
           {filters.map(f => (
             <button key={f.key} onClick={() => setActiveFilter(f.key)}
-              style={{ padding: '9px 18px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 700, letterSpacing: 0.3, transition: 'all .2s', whiteSpace: 'nowrap', background: activeFilter === f.key ? '#fff' : 'transparent', color: activeFilter === f.key ? '#F57C00' : 'rgba(255,255,255,0.85)' }}
+              style={{ padding: '9px 20px', borderRadius: 99, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 700, letterSpacing: 0.3, transition: 'all .2s', whiteSpace: 'nowrap', background: activeFilter === f.key ? '#fff' : 'transparent', color: activeFilter === f.key ? '#F57C00' : 'rgba(255,255,255,0.85)' }}
             >
               {lang === 'ru' ? f.ru : f.uz}
             </button>
@@ -85,26 +100,55 @@ function CatalogContent() {
         {/* Sidebar */}
         <aside style={{ width: 220, flexShrink: 0 }} className={`catalog-sidebar ${sidebarOpen ? 'open' : ''}`}>
           <div style={{ background: '#fff', border: '1.5px solid #F0F0F0', borderRadius: 14, overflow: 'hidden' }}>
-            <div style={{ padding: '14px 16px', borderBottom: '1px solid #F5F5F5' }}>
-              <button onClick={() => { setActiveCat(null); setSidebarOpen(false) }}
-                style={{ fontSize: 13, fontWeight: 700, color: activeCat === null ? '#F57C00' : '#555', background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center', gap: 8 }}
-              >
-                <span>📦</span> {lang === 'ru' ? 'Все категории' : 'Barcha kategoriyalar'}
-              </button>
-            </div>
-            {categories.map((cat: any) => (
-              <button key={cat.id} onClick={() => { setActiveCat(activeCat === cat.id ? null : cat.id); setSidebarOpen(false) }}
-                style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 10, padding: '12px 16px', background: activeCat === cat.id ? '#FFF8F0' : 'transparent', border: 'none', borderBottom: '1px solid #FAFAFA', cursor: 'pointer', textAlign: 'left', transition: 'background .15s' }}
-                onMouseEnter={e => { if (activeCat !== cat.id) e.currentTarget.style.background = '#FAFAFA' }}
-                onMouseLeave={e => { if (activeCat !== cat.id) e.currentTarget.style.background = 'transparent' }}
-              >
-                <span style={{ fontSize: 20 }}>{cat.icon || '📦'}</span>
-                <span style={{ flex: 1, fontSize: 14, fontWeight: activeCat === cat.id ? 700 : 500, color: activeCat === cat.id ? '#F57C00' : '#333' }}>
-                  {lang === 'ru' ? cat.nameRu : cat.nameUz}
-                </span>
-                <span style={{ fontSize: 11, background: '#F0F0F0', color: '#999', padding: '2px 7px', borderRadius: 99 }}>{cat._count?.products || 0}</span>
-              </button>
-            ))}
+            {categories.map((cat: any) => {
+              const isActive = activeCat === cat.id
+              const isExpanded = expandedCat === cat.id
+              const hasSubs = cat.children?.length > 0
+              return (
+                <div key={cat.id} style={{ borderBottom: '1px solid #F5F5F5' }}>
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <button
+                      onClick={() => { setActiveCat(isActive ? null : cat.id); setSidebarOpen(false); if (hasSubs && !isExpanded) toggleExpand(cat.id) }}
+                      style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 10, padding: '12px 16px', background: isActive ? '#FFF8F0' : 'transparent', border: 'none', cursor: 'pointer', textAlign: 'left', transition: 'background .15s' }}
+                      onMouseEnter={e => { if (!isActive) e.currentTarget.style.background = '#FAFAFA' }}
+                      onMouseLeave={e => { if (!isActive) e.currentTarget.style.background = 'transparent' }}
+                    >
+                      <CatIcon name={cat.icon} size={18} color={isActive ? '#F57C00' : '#666'} />
+                      <span style={{ flex: 1, fontSize: 14, fontWeight: isActive ? 700 : 500, color: isActive ? '#F57C00' : '#333' }}>
+                        {lang === 'ru' ? cat.nameRu : cat.nameUz}
+                      </span>
+                      <span style={{ fontSize: 11, background: '#F0F0F0', color: '#999', padding: '2px 7px', borderRadius: 99 }}>{cat._count?.products || 0}</span>
+                    </button>
+                    {hasSubs && (
+                      <button onClick={() => toggleExpand(cat.id)}
+                        style={{ padding: '12px 12px', background: 'transparent', border: 'none', cursor: 'pointer', color: '#999', fontSize: 10, transition: 'transform .2s', transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                      >▼</button>
+                    )}
+                  </div>
+                  {hasSubs && isExpanded && (
+                    <div style={{ background: '#FAFAFA' }}>
+                      {cat.children.map((sub: any) => {
+                        const isSubActive = activeCat === sub.id
+                        return (
+                          <button key={sub.id}
+                            onClick={() => { setActiveCat(isSubActive ? null : sub.id); setSidebarOpen(false) }}
+                            style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 8, padding: '9px 16px 9px 42px', background: isSubActive ? '#FFF8F0' : 'transparent', border: 'none', borderTop: '1px solid #F0F0F0', cursor: 'pointer', textAlign: 'left', transition: 'background .15s' }}
+                            onMouseEnter={e => { if (!isSubActive) e.currentTarget.style.background = '#F5F5F5' }}
+                            onMouseLeave={e => { if (!isSubActive) e.currentTarget.style.background = 'transparent' }}
+                          >
+                            <span style={{ width: 4, height: 4, borderRadius: '50%', background: isSubActive ? '#F57C00' : '#CCC', flexShrink: 0 }} />
+                            <span style={{ flex: 1, fontSize: 13, fontWeight: isSubActive ? 600 : 400, color: isSubActive ? '#F57C00' : '#555' }}>
+                              {lang === 'ru' ? sub.nameRu : sub.nameUz}
+                            </span>
+                            <span style={{ fontSize: 10, background: '#EFEFEF', color: '#AAA', padding: '1px 6px', borderRadius: 99 }}>{sub._count?.products || 0}</span>
+                          </button>
+                        )
+                      })}
+                    </div>
+                  )}
+                </div>
+              )
+            })}
           </div>
         </aside>
 
