@@ -28,10 +28,10 @@ const jsonLd = {
   "openingHours": "Mo-Sa 09:00-18:00",
   "priceRange": "$$",
   "sameAs": ["https://t.me/PromoMarket_Tashkent"],
-  "makesOffer": [
-    "Промо текстиль", "Ежедневники и блокноты", "Ручки с логотипом", "Кружки с логотипом", "Подарочные наборы",
+  "knowsAbout": [
+    "Промотекстиль", "Ежедневники и блокноты", "Ручки с логотипом", "Кружки с логотипом", "Подарочные наборы",
     "Наградная символика", "Зонты с логотипом", "Полиграфия", "Корпоративные подарки", "Промо аксессуары"
-  ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Product", name } }))
+  ]
 }
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
