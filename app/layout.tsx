@@ -39,41 +39,10 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Store",
-  name: "PROMO MARKET — Промо сувениры и корпоративные подарки",
-  image: "https://www.promomarket.uz/logo.png",
-  "@id": "https://www.promomarket.uz",
-  url: "https://www.promomarket.uz",
-  telephone: "+998777416688",
-  email: "info@promomarket.uz",
-  priceRange: "$$",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Юнус Ражабий 14/2",
-    addressLocality: "Ташкент",
-    addressRegion: "Яккасарайский район",
-    addressCountry: "UZ",
-  },
-  areaServed: "Узбекистан",
-  description:
-    "Рекламные сувениры, корпоративные подарки, промотекстиль и брендированная продукция с нанесением логотипа на заказ в Ташкенте.",
-  sameAs: ["https://t.me/PromoMarket_Tashkent"],
-  makesOffer: [
-    "Промо текстиль", "Ежедневники и блокноты", "Ручки с логотипом", "Кружки с логотипом", "Подарочные наборы",
-    "Наградная символика", "Зонты с логотипом", "Полиграфия", "Корпоративные подарки", "Промо аксессуары",
-  ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Product", name } })),
-};
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ru">
       <body className="min-h-screen flex flex-col">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
         {children}
         <Toaster position="top-right" />
       </body>
