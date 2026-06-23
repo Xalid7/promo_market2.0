@@ -223,21 +223,6 @@ export default function HomePage() {
 
       {banners.length === 0 && <AnimatedWave from="#BF360C" to="#fff" />}
 
-      {/* ══════════ STATS ══════════ */}
-      <section ref={statsRef} style={{ background: '#fff', borderBottom: '1px solid #F0F0F0' }}>
-        <div className="stats-grid" style={{ maxWidth: 1280, margin: '0 auto', padding: '32px 24px', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8, alignItems: 'center' }}>
-          <StatCard value={5} suffix="+" label={lang === 'ru' ? 'Лет опыта' : 'Yil tajriba'} active={statsActive} />
-          <StatCard value={500} suffix="+" label={lang === 'ru' ? 'Клиентов' : 'Mijozlar'} active={statsActive} />
-          <StatCard value={3000} suffix="+" label={lang === 'ru' ? 'Видов продукции' : 'Mahsulot turi'} active={statsActive} />
-          <StatCard value={8} suffix="+" label={lang === 'ru' ? 'Видов брендинга' : 'Brendlash usullari'} active={statsActive} />
-        </div>
-        <style>{`
-          @media (max-width: 600px) {
-            .stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 0 !important; }
-          }
-        `}</style>
-      </section>
-
       {/* ══════════ SERVICES ══════════ */}
       <section style={{ background: '#FAFAFA', padding: '64px 0' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
