@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/dashboard/', '/api/', '/login'],
     },
-    sitemap: 'https://promomarket.uz/sitemap.xml',
+    sitemap: 'https://www.promomarket.uz/sitemap.xml',
   }
 }

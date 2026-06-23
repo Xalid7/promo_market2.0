@@ -75,6 +75,16 @@ function CatalogContent() {
   return (
     <div style={{ maxWidth: 1280, margin: '0 auto', padding: '24px 16px' }}>
 
+      {/* SEO heading */}
+      <h1 style={{ fontSize: 24, fontWeight: 800, color: '#111', marginBottom: 6 }}>
+        {lang === 'ru' ? 'Каталог промо сувениров и корпоративных подарков в Ташкенте' : "Toshkentda promo suvenirlar va korporativ sovg'alar katalogi"}
+      </h1>
+      <p style={{ fontSize: 14, color: '#666', marginBottom: 20, maxWidth: 760, lineHeight: 1.6 }}>
+        {lang === 'ru'
+          ? 'Ручки, ежедневники, кружки, зонты, подарочные наборы, промотекстиль, наградная символика и полиграфия — с нанесением логотипа на заказ.'
+          : "Ruchkalar, daftarlar, krujkalar, soyabonlar, sovg'a to'plamlari, promo tekstil, sovrin ramzlari va poligrafiya — logotip bilan buyurtmaga."}
+      </p>
+
       {/* Filter tabs */}
       <div style={{ background: '#F57C00', borderRadius: 99, marginBottom: 24, overflowX: 'auto', scrollbarWidth: 'none', display: 'inline-flex', maxWidth: '100%' }}>
         <div style={{ display: 'flex', alignItems: 'center', padding: 5, gap: 4, minWidth: 'max-content' }}>
@@ -210,6 +220,43 @@ function CatalogContent() {
           )}
         </div>
       </div>
+
+      {/* SEO text block */}
+      <section style={{ marginTop: 48, paddingTop: 28, borderTop: '1px solid #EEE', color: '#666', fontSize: 13.5, lineHeight: 1.8 }}>
+        {lang === 'ru' ? (
+          <>
+            <h2 style={{ fontSize: 17, fontWeight: 700, color: '#333', marginBottom: 10 }}>Промо сувениры и корпоративные подарки на заказ в Ташкенте</h2>
+            <p style={{ marginBottom: 10 }}>
+              PROMO MARKET — рекламная продукция и корпоративные подарки в Узбекистане. Изготавливаем на заказ <b>ручки</b>,
+              <b> ежедневники и блокноты</b>, <b>кружки</b> и посуду, <b>зонты</b>, часы и электронику с логотипом вашей компании.
+            </p>
+            <p style={{ marginBottom: 10 }}>
+              <b>Подарочные наборы</b> для сотрудников и клиентов, <b>наградная символика</b> — кубки, медали и дипломы,
+              сувениры к праздникам, игрушки и спортивная атрибутика с фирменной символикой.
+            </p>
+            <p>
+              А также <b>промотекстиль</b>, <b>полиграфия</b>, коробки и пакеты, промо аксессуары, продукция для медицины и косметологии.
+              Нанесение логотипа (шелкография, вышивка, УФ-печать, тиснение), любой тираж, доставка по Ташкенту и Узбекистану.
+            </p>
+          </>
+        ) : (
+          <>
+            <h2 style={{ fontSize: 17, fontWeight: 700, color: '#333', marginBottom: 10 }}>Toshkentda promo suvenirlar va korporativ sovg'alar buyurtmaga</h2>
+            <p style={{ marginBottom: 10 }}>
+              PROMO MARKET — O'zbekistonda reklama mahsulotlari va korporativ sovg'alar. Buyurtmaga <b>ruchkalar</b>,
+              <b> daftar va bloknotlar</b>, <b>krujkalar</b> va idishlar, <b>soyabonlar</b>, soat va elektronikani logotip bilan tayyorlaymiz.
+            </p>
+            <p style={{ marginBottom: 10 }}>
+              Xodimlar va mijozlar uchun <b>sovg'a to'plamlari</b>, <b>sovrin ramzlari</b> — kuboklar, medallar va diplomlar,
+              bayramga sovg'alar, o'yinchoqlar va sport atributlari firma belgisi bilan.
+            </p>
+            <p>
+              Shuningdek <b>promo tekstil</b>, <b>poligrafiya</b>, quti va paketlar, promo aksessuarlar, tibbiyot va kosmetologiya mahsulotlari.
+              Logotip bosish (shelkografiya, tikuv, UF-bosma, bo'rttirma), har qanday tiraj, Toshkent va O'zbekiston bo'ylab yetkazib berish.
+            </p>
+          </>
+        )}
+      </section>
 
       <style>{`
         @media (max-width: 768px) {
