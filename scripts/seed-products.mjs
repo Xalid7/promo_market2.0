@@ -7,7 +7,7 @@ const products = [
   // ── Asosiy 17 kategoriya ──
   { nameRu: 'Футболка', nameUz: 'Futbolka', slug: 'tovar-promo-tekstil', catSlug: 'promo-tekstil', img: 'cat-promo-tekstil.png' },
   { nameRu: 'Кружка', nameUz: 'Krujka', slug: 'tovar-posuda', catSlug: 'posuda', img: 'cat-posuda.png' },
-  { nameRu: 'Ежедневник', nameUz: 'Kundalik', slug: 'tovar-ezhednevniki', catSlug: 'ezhednevniki-bloknoty', img: 'cat-ezhednevniki-bloknoty.png' },
+  { nameRu: 'Ежедневник', nameUz: 'Kundalik', slug: 'tovar-ezhednevniki-bloknoty', catSlug: 'ezhednevniki-bloknoty', img: 'cat-ezhednevniki-bloknoty.png' },
   { nameRu: 'Ручка', nameUz: 'Ruchka', slug: 'tovar-ruchki', catSlug: 'ruchki', img: 'cat-ruchki.png' },
   { nameRu: 'Часы настенные', nameUz: 'Devor soati', slug: 'tovar-chasy', catSlug: 'chasy', img: 'cat-chasy.png' },
   { nameRu: 'Power bank', nameUz: 'Power bank', slug: 'tovar-elektronika', catSlug: 'elektronika', img: 'cat-elektronika.png' },
