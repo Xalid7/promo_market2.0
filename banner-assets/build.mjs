@@ -11,6 +11,15 @@ const T = {
   gift: { accent: '#F57C00', head: '#E65100', corner: { ru: 'ПОДАРКИ', uz: "SOVG'ALAR" }, dProdH: 380, mProdW: 950, dHeadSize: 52,
     h: { ru: ['КОРПОРАТИВНЫЕ', 'ПОДАРКИ'], uz: ['KORPORATIV', "SOVG'ALAR"] },
     sub: { ru: 'Ежедневники · ручки · наборы с логотипом', uz: "Kundaliklar · ruchkalar · logoli to'plamlar" } },
+  tex: { accent: '#F57C00', head: '#E65100', corner: { ru: 'ТЕКСТИЛЬ', uz: 'TEKSTIL' }, dProdH: 400, mProdW: 880,
+    h: { ru: ['ПРОМО', 'ТЕКСТИЛЬ'], uz: ['PROMO', 'TEKSTIL'] },
+    sub: { ru: 'Футболки · поло · худи · кепки с логотипом', uz: "Futbolka · polo · hudi · kepka" } },
+  pos: { accent: '#0097A7', head: '#00838F', corner: { ru: 'ПОСУДА', uz: 'IDISHLAR' }, dProdH: 400, mProdW: 900,
+    h: { ru: ['КРУЖКИ И', 'ТЕРМОСЫ'], uz: ['KRUJKA VA', 'TERMOSLAR'] },
+    sub: { ru: 'Кружки · термокружки · бутылки с логотипом', uz: "Krujka · termokrujka · butilka" } },
+  ele: { accent: '#37474F', head: '#263238', corner: { ru: 'ГАДЖЕТЫ', uz: 'GADJETLAR' }, dProdH: 330, mProdW: 980,
+    h: { ru: ['ПРОМО', 'ЭЛЕКТРОНИКА'], uz: ['PROMO', 'ELEKTRONIKA'] },
+    sub: { ru: 'Power bank · флешки · наушники с логотипом', uz: "Power bank · fleshka · quloqchin" } },
 }
 
 async function productBanner(key, src, fileBase) {
@@ -44,6 +53,8 @@ async function productBanner(key, src, fileBase) {
   }
 }
 
-const gift = await tr('banner-assets/gift.png')
-await productBanner('gift', gift, 'banner-gift')
+await productBanner('gift', await tr('banner-assets/gift.png'), 'banner-gift')
+await productBanner('tex', await tr('banner-assets/tex.png'), 'banner-tex')
+await productBanner('pos', await tr('banner-assets/pos.png'), 'banner-pos')
+await productBanner('ele', await tr('banner-assets/ele.png'), 'banner-ele')
 console.log('Promo banners built (RU+UZ, desktop+mobile)')

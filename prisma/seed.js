@@ -32,17 +32,22 @@ async function main() {
     await prisma.settings.create({ data: settingsData });
   }
 
-  // Banner — «Корпоративные подарки» (RU+UZ, desktop+mobile, клик → /catalog)
-  const giftBanner = {
-    imageUrl: '/banners/banner-gift.png',
-    mobileUrl: '/banners/banner-gift-mobile.png',
-    imageUrlUz: '/banners/banner-gift-uz.png',
-    mobileUrlUz: '/banners/banner-gift-mobile-uz.png',
-    ctaLink: '/catalog',
-    order: 0,
-  };
-  await prisma.banner.upsert({ where: { id: 'banner-gift' }, update: giftBanner, create: { id: 'banner-gift', ...giftBanner } });
-  console.log('✓ Banner');
+  // Banners — слайдер (автопрокрутка 5 сек), RU+UZ, desktop+mobile, клик → /catalog
+  const bannerSeed = [
+    { id: 'banner-gift', base: '/banners/banner-gift', order: 0 },
+    { id: 'banner-tex',  base: '/banners/banner-tex',  order: 1 },
+    { id: 'banner-pos',  base: '/banners/banner-pos',  order: 2 },
+    { id: 'banner-ele',  base: '/banners/banner-ele',  order: 3 },
+  ];
+  for (const b of bannerSeed) {
+    const data = {
+      imageUrl: `${b.base}.png`, mobileUrl: `${b.base}-mobile.png`,
+      imageUrlUz: `${b.base}-uz.png`, mobileUrlUz: `${b.base}-mobile-uz.png`,
+      ctaLink: '/catalog', order: b.order,
+    };
+    await prisma.banner.upsert({ where: { id: b.id }, update: data, create: { id: b.id, ...data } });
+  }
+  console.log('✓ Banners');
 
   // Clear old data and re-seed
   await prisma.product.deleteMany({});
