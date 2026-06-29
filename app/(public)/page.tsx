@@ -77,6 +77,7 @@ function StatCard({ value, suffix, label, active }: { value: number; suffix: str
 
 export default function HomePage() {
   const [banners, setBanners] = useState<any[]>([])
+  const [bannersLoaded, setBannersLoaded] = useState(false)
   const [products, setProducts] = useState<any[]>([])
   const [navServices, setNavServices] = useState<any[]>([])
   const [current, setCurrent] = useState(0)
@@ -92,7 +93,7 @@ export default function HomePage() {
     if (saved) setLang(saved)
     const onLangChange = () => { const l = localStorage.getItem('lang') as 'ru'|'uz'|null; if (l) setLang(l) }
     window.addEventListener('langchange', onLangChange)
-    fetch('/api/banners').then(r => r.json()).then(setBanners).catch(() => {})
+    fetch('/api/banners').then(r => r.json()).then(d => setBanners(Array.isArray(d) ? d : [])).catch(() => {}).finally(() => setBannersLoaded(true))
     fetch('/api/products').then(r => r.json()).then(d => {
       if (!Array.isArray(d)) return setProducts([])
       const seen = new Set<string>()
@@ -137,8 +138,17 @@ export default function HomePage() {
     <div>
 
       {/* ══════════ HERO ══════════ */}
-      <section style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
-        {banners.length === 0 ? (
+      <section style={{ position: 'relative', width: '100%', maxWidth: 1280, margin: '0 auto', padding: '0 16px' }}>
+        <style>{`
+          .hero-banner-img { display: block; width: 100%; aspect-ratio: 1420 / 540; object-fit: cover; object-position: center; background: transparent; }
+          .hero-skeleton { width: 100%; aspect-ratio: 1420 / 540; background: linear-gradient(110deg, #f4f4f4 30%, #ececec 50%, #f4f4f4 70%); background-size: 200% 100%; animation: heroShimmer 1.4s ease-in-out infinite; }
+          @keyframes heroShimmer { 0% { background-position: 200% 0 } 100% { background-position: -200% 0 } }
+          @media (max-width: 768px) { .hero-banner-img { aspect-ratio: 1080 / 1296; } .hero-skeleton { aspect-ratio: 1080 / 1296; } }
+        `}</style>
+        <div style={{ position: 'relative', overflow: 'hidden' }}>
+        {!bannersLoaded ? (
+          <div className="hero-skeleton" />
+        ) : banners.length === 0 ? (
           <div style={{ background: 'linear-gradient(-45deg, #EF6C00, #BF360C, #F57C00, #BF360C)', backgroundSize: '400% 400%', animation: 'gradientShift 8s ease infinite', minHeight: 520, display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
             {/* Animated background shapes */}
             <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
@@ -183,10 +193,16 @@ export default function HomePage() {
         ) : (
           <>
             <div style={{ display: 'flex', transition: 'transform .5s cubic-bezier(.4,0,.2,1)', transform: `translateX(-${current * 100}%)` }}>
-              {banners.map((b: any) => (
-                <div key={b.id} style={{ minWidth: '100%', position: 'relative' }}>
-                  <div style={{ width: '100%', aspectRatio: '16/9', minHeight: 320, background: '#f5f5f5', position: 'relative', overflow: 'hidden' }}>
-                    <img src={b.imageUrl} alt={b.titleRu || ''} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
+              {banners.map((b: any) => {
+                const bare = b.ctaLink && !b.titleRu && !b.ctaText
+                const bImg = (lang === 'uz' && b.imageUrlUz) ? b.imageUrlUz : b.imageUrl
+                const bMob = (lang === 'uz' && b.mobileUrlUz) ? b.mobileUrlUz : b.mobileUrl
+                const inner = (
+                  <div style={{ width: '100%', background: 'transparent', position: 'relative', overflow: 'hidden' }}>
+                    <picture key={lang}>
+                      {bMob && <source media="(max-width: 768px)" srcSet={bMob} />}
+                      <img className="hero-banner-img" src={bImg} alt={b.titleRu || ''} />
+                    </picture>
                     {(b.titleRu || b.ctaText) && (
                       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.1) 50%, transparent 75%)', display: 'flex', alignItems: 'center', padding: '0 5%' }}>
                         <div style={{ maxWidth: 520, color: '#fff' }}>
@@ -199,8 +215,13 @@ export default function HomePage() {
                       </div>
                     )}
                   </div>
-                </div>
-              ))}
+                )
+                return (
+                  <div key={b.id} style={{ minWidth: '100%', position: 'relative' }}>
+                    {bare ? <Link href={b.ctaLink} style={{ display: 'block' }}>{inner}</Link> : inner}
+                  </div>
+                )
+              })}
             </div>
             {banners.length > 1 && (
               <>
@@ -219,9 +240,10 @@ export default function HomePage() {
             )}
           </>
         )}
+        </div>
       </section>
 
-      {banners.length === 0 && <AnimatedWave from="#BF360C" to="#fff" />}
+      {bannersLoaded && banners.length === 0 && <AnimatedWave from="#BF360C" to="#fff" />}
 
       {/* ══════════ SERVICES ══════════ */}
       <section style={{ background: '#FAFAFA', padding: '64px 0' }}>

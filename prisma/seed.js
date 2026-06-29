@@ -32,6 +32,18 @@ async function main() {
     await prisma.settings.create({ data: settingsData });
   }
 
+  // Banner — «Корпоративные подарки» (RU+UZ, desktop+mobile, клик → /catalog)
+  const giftBanner = {
+    imageUrl: '/banners/banner-gift.png',
+    mobileUrl: '/banners/banner-gift-mobile.png',
+    imageUrlUz: '/banners/banner-gift-uz.png',
+    mobileUrlUz: '/banners/banner-gift-mobile-uz.png',
+    ctaLink: '/catalog',
+    order: 0,
+  };
+  await prisma.banner.upsert({ where: { id: 'banner-gift' }, update: giftBanner, create: { id: 'banner-gift', ...giftBanner } });
+  console.log('✓ Banner');
+
   // Clear old data and re-seed
   await prisma.product.deleteMany({});
   await prisma.category.deleteMany({});
