@@ -20,8 +20,8 @@ async function main() {
     email: "info@promomarket.uz",
     phone: "+998 77 741 66 88",
     address: "Юнус Ражабий 14/2, Яккасарайский район, г. Ташкент, Узбекистан",
-    mapLat: "41.2880",
-    mapLng: "69.2350",
+    mapLat: "41.305147",
+    mapLng: "69.262498",
     aboutRu: "PROMO MARKET — производство и поставка корпоративной одежды, рекламной продукции и брендированных сувениров в Узбекистане.",
     aboutUz: "PROMO MARKET — O'zbekistonda korporativ kiyim, reklama mahsulotlari va brendlangan sovg'alar ishlab chiqarish va yetkazib berish.",
   };
